@@ -17,7 +17,7 @@ def dashboard():
 @app.route("/<path:filename>")
 def frontend_files(filename):
     return send_from_directory("frontend", filename)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///expenses.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///expenses.db")
 db = SQLAlchemy(app)
 
 class Expense(db.Model):
