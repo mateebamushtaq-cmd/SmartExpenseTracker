@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="loginSection">
+    <h2>Login to Smart Expense Tracker</h2>
+
+    <form id="loginForm">
+        <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+            autocomplete="username"
+            required
+        >
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            autocomplete="current-password"
+            required
+        >
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="loginMessage"></p>
+</section>
+
+    <h1>Smart Expense Tracker</h1>
+    <p>Manage your daily expenses easily!</p>
+
+    <h2>Add New Expense</h2>
+
+    <form id="expenseForm">
+        <label for="category">Category:</label>
+        <input type="text" id="category" required>
+
+        <br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" min="0.01" step="0.01" required>
+
+        <br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description">
+
+        <br><br>
+
+        <button type="submit">Add Expense</button>
+    </form>
+
+<div class="total-expenses">
+    <h2>Total Expenses</h2>
+    <p id="totalAmount">Rs. 0</p>
+</div>
+
+<div class="category-summary">
+    <h2>Spending by Category</h2>
+    <div id="categorySummary">
+        <p>Loading category summary...</p>
+    </div>
+</div>
+<div class="expense-chart">
+    <h2>Expense Chart</h2>
+    <canvas id="expenseChart"></canvas>
+</div>
+
+<div class="monthly-report">
+    <h2>Monthly Expense Report</h2>
+
+    <label for="reportMonth">Select Month:</label>
+    <input type="month" id="reportMonth">
+
+    <p id="monthlyTotal">Monthly Total: Rs. 0.00</p>
+</div>
+
+<div class="budget-section">
+    <h2>Monthly Budget</h2>
+
+    <label for="budgetAmount">Set Your Monthly Budget:</label>
+    <input type="number" id="budgetAmount" min="1" step="0.01" placeholder="Enter budget amount">
+
+    <button type="button" id="checkBudget">Check Budget</button>
+
+    <p id="budgetMessage"></p>
+</div>
+
+<div class="export-section">
+    <h2>Export Expense Records</h2>
+    <button type="button" id="exportCSV">
+        Download Expenses CSV
+    </button>
+</div>
+
+
+    <h2>My Expenses</h2>
+    
+<div class="date-filter">
+    <label for="filterDate">Filter by Date:</label>
+    <input type="date" id="filterDate">
+    <button type="button" id="clearDateFilter">Clear Filter</button>
+</div>
+
+<div id="expenseList">
+    <p>Loading expenses...</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
